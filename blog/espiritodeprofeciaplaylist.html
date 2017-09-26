@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>HTML5 Audio with playlists - jsFiddle demo</title>
+	<link rel="shortcut icon" href="img/md5.png" type="image/x-icon">
+
+ <BODY bgcolor="white" background="wallpapers/59.jpg" vlink="white" link="gray" alink="green" >
+<div style="color: blue; text-align: center;"><center>
+
+
+
+  
+<a href="espiritodeprofecias.html"><B>ESCUTAR SEM PLAYLIST<a/> | <a href="espiritodeprofeciavideo.html"><B>ASSISTIR AO VIDEO.MP4<a/><br/><br/><br/><br/>
+
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    #playlist,audio{background:#666;width:400px;padding:20px;}
+.active a{color:#5DB0E6;text-decoration:none;}
+li a{color:#eeeedd;background:#333;padding:5px;display:block;}
+li a:hover{text-decoration:none;}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+var audio;
+var playlist;
+var tracks;
+var current;
+
+init();
+function init(){
+    current = 0;
+    audio = $('audio');
+    playlist = $('#playlist');
+    tracks = playlist.find('li a');
+    len = tracks.length - 1;
+    audio[0].volume = .70;
+    audio[0].play();
+    playlist.find('a').click(function(e){
+        e.preventDefault();
+        link = $(this);
+        current = link.parent().index();
+        run(link, audio[0]);
+    });
+    audio[0].addEventListener('ended',function(e){
+        current++;
+        if(current == len){
+            current = 0;
+            link = playlist.find('a')[0];
+        }else{
+            link = playlist.find('a')[current];    
+        }
+        run($(link),audio[0]);
+    });
+}
+function run(link, player){
+        player.src = link.attr('href');
+        par = link.parent();
+        par.addClass('active').siblings().removeClass('active');
+        audio[0].load();
+        audio[0].play();
+}
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+      <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+        <source type="audio/mp3" src="swf/hs/1s.mp3">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+    <ul id="playlist">
+
+<a href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF01.mp3"><B>EF01 - A Ultima Crise da Terra.mp3</a></li>
+        <li><a 	6.0 MB	11/04/15 02:43:06
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF02.mp3"><B>EF02 - Sinais de que Cristo Voltara em Breve.mp3</a></li>
+        <li><a 	11.7 MB	11/04/15 02:51:16
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF03.mp3"><B>EF03 - Quando Sucederao Estas Coisas.mp3</a></li>
+        <li><a 	9.6 MB	11/04/15 02:49:15
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF04.mp3"><B>EF04 - A Igreja de Deus nos Ultimos Dias.mp3</a></li>
+        <li><a 	16.4 MB	11/04/15 03:02:01
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF05.mp3"><B>EF05 - A Vida Devocional do Remanescente.mp3</a></li>
+        <li><a 	10.0 MB	11/04/15 03:31:41
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF06.mp3"><B>EF06 - O Estilo de Vida e Atividades do Remanescente.mp3</a></li>
+        <li><a 	17.7 MB	11/04/15 03:47:27
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF07.mp3"><B>EF07 - Vida Campestre.mp3</a></li>
+        <li><a 	13.1 MB	11/04/15 03:40:06
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF08.mp3"><B>EF08 - As Cidades.mp3</a></li>
+        <li><a 	11.4 MB	11/04/15 04:20:25
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF09.mp3"><B>EF09 - Leis Dominicais.mp3</a></li>
+        <li><a 	17.4 MB	11/04/15 06:20:59
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF10.mp3"><B>EF10 - O Pequeno Tempo de Angustia.mp3</a></li>
+        <li><a 	9.7 MB	11/04/15 04:43:54
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF11.mp3"><B>EF11 - Enganos Satanicos dos Ultimos Dias.mp3</a></li>
+        <li><a 	15.0 MB	11/04/15 06:44:15
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF12.mp3"><B>EF12 - A Sacudidura.mp3</a></li>
+        <li><a 	9.3 MB	11/04/15 06:43:25
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF13.mp3"><B>EF13 - A Chuva Serodia.mp3</a></li>
+        <li><a 	12.2 MB	11/04/15 06:48:43
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF14.mp3"><B>EF14 - O Alto Clamor.mp3</a></li>
+        <li><a 	14.6 MB	11/04/15 06:50:34
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF15.mp3"><B>EF15 - O Selo de Deus e a Marca da Besta.mp3</a></li>
+        <li><a 	9.4 MB	11/04/15 06:54:19
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF16.mp3"><B>EF16 - O Fim do Tempo da Graca.mp3</a></li>
+        <li><a 	9.4 MB	11/04/15 06:56:29
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF17.mp3"><B>EF17 - As sete Ultimas Pragas e os Impios.mp3</a></li>
+        <li><a 	12.7 MB	11/04/15 06:58:16
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF18.mp3"><B>EF18 - As sete Ultimas Pragas e os Justos.mp3</a></li>
+        <li><a 	15.8 MB	11/04/15 07:01:01
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF19.mp3"><B>EF19 - A Volta de Cristo.mp3</a></li>
+        <li><a 	11.2 MB	11/04/15 07:00:52
+href="../config/MENU ONLINE/espiritodeprofecia/Eventos Finais/EF20.mp3"><B>EF20 - A Heranca dos Santos.mp3</a></li>
+        <li><a 	20.5 MB	11/04/15 07:03:01
+>
+<a href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC0.mp3"><B>GC00 - A - Prefacio.mp3</a></li>
+        <li><a 	1.3 MB	11/04/15 02:23:30
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC00.mp3"><B>GC00 - B - Introducao.mp3</a></li>
+        <li><a 	9.3 MB	11/04/15 02:28:43
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC01.mp3"><B>GC01 - Predito o destino do mundo.mp3</a></li>
+        <li><a 	25.0 MB	11/04/15 02:55:13
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC02.mp3"><B>GC02 - O valor dos Martires.mp3</a></li>
+        <li><a 	11.9 MB	11/04/15 02:37:00
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC03.mp3"><B>GC03 - Como Comecaram as Trevas Morais.mp3</a></li>
+        <li><a 	14.5 MB	11/04/15 02:42:43
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC04.mp3"><B>GC04 - Um Povo que Difunde Luz.mp3</a></li>
+        <li><a 	22.2 MB	11/04/15 02:54:21
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC05.mp3"><B>GC05 - Arautos de Uma Era Melhor.mp3</a></li>
+        <li><a 	21.7 MB	11/04/15 02:53:44
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC06.mp3"><B>GC06 - Dois Herois da Idade Media.mp3</a></li>
+        <li><a 	27.3 MB	11/04/15 03:03:35
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC07.mp3"><B>GC07 - A Influencia de Um Bom Lar.mp3</a></li>
+        <li><a 	31.3 MB	11/04/15 03:14:16
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC08.mp3"><B>GC08 - O Poder Triunfante da Verdade.mp3</a></li>
+        <li><a 	31.3 MB	11/04/15 03:34:41
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC09.mp3"><B>GC09 - A Luz na Suica.mp3</a></li>
+        <li><a 	16.1 MB	11/04/15 03:27:07
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC10.mp3"><B>GC10 - A Europa Desperta.mp3</a></li>
+        <li><a 	14.0 MB	11/04/15 03:26:00
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC11.mp3"><B>GC11 - Os Principes Amparam a Verdade.mp3</a></li>
+        <li><a 	17.1 MB	11/04/15 03:27:47
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC12.mp3"><B>GC12 - Os Nobres da Franca.mp3</a></li>
+        <li><a 	33.1 MB	11/04/15 04:07:52
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC13.mp3"><B>GC13 - A Liberdade nos Paises Baixos.mp3</a></li>
+        <li><a 	9.6 MB	11/04/15 03:42:50
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC14.mp3"><B>GC14 - Progressos na Inglaterra.mp3</a></li>
+        <li><a 	17.7 MB	11/04/15 04:38:59
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC15.mp3"><B>GC15 - A Escritura Sagrada e a Revolucao Francesa.mp3</a></li>
+        <li><a 	17.6 MB	11/04/15 04:39:03
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC16.mp3"><B>GC16 - O Mais Sagrado Direito do Homem.mp3</a></li>
+        <li><a 	11.6 MB	11/04/15 04:16:58
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC17.mp3"><B>GC17 - A Esperanca que Infunde Alegria.mp3</a></li>
+        <li><a 	17.3 MB	11/04/15 04:39:08
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC18.mp3"><B>GC18 - Uma Profecia Muito Significativa.mp3</a></li>
+        <li><a 	17.4 MB	11/04/15 04:39:18
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC19.mp3"><B>GC19 - Luz para os Nossos Dias.mp3</a></li>
+        <li><a 	13.0 MB	11/04/15 04:23:50
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC20.mp3"><B>GC20 - Um Grande Movimento Mundial.mp3</a></li>
+        <li><a 	21.3 MB	11/04/15 06:21:34
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC21.mp3"><B>GC21 - A Causa da Degradacao Atual.mp3</a></li>
+        <li><a 	41.1 MB	11/04/15 07:37:19
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC22.mp3"><B>GC22 - Profecias Alentadoras.mp3</a></li>
+        <li><a 	27.8 MB	11/04/15 07:31:35
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC23.mp3"><B>GC23 - O Santuario Celestial - Centro de Nossa Esperanca.mp3</a></li>
+        <li><a 	23.1 MB	11/04/15 06:22:06
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC24.mp3"><B>GC24 - Quando Comeca o Julgamento Divino.mp3</a></li>
+        <li><a 	14.9 MB	11/04/15 04:43:32
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC25.mp3"><B>GC25 - A Imutavel Lei de Deus.mp3</a></li>
+        <li><a 	27.4 MB	11/04/15 06:23:41
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC26.mp3"><B>GC26 - Restauracao da Verdade.mp3</a></li>
+        <li><a 	14.6 MB	11/04/15 04:42:22
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC27.mp3"><B>GC27 - A Vida que Satisfaz - Como Alcancar Paz de Alma.mp3</a></li>
+        <li><a 	27.9 MB	11/04/15 06:24:13
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC28.mp3"><B>GC28 - O Grande Juizo de Investigacao.mp3</a></li>
+        <li><a 	20.9 MB	11/04/15 06:19:04
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC29.mp3"><B>GC29 - Por Que Existe o Sofrimento.mp3</a></li>
+        <li><a 	21.6 MB	11/04/15 06:20:10
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC30.mp3"><B>GC30 - O Pior Inimido do Homem, e Como Vence-lo.mp3</a></li>
+        <li><a 	9.7 MB	11/04/15 04:25:22
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC31.mp3"><B>GC31 - Invisiveis Defensores do Homem.mp3</a></li>
+        <li><a 	10.6 MB	11/04/15 04:30:40
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC32.mp3"><B>GC32 - Os Ardis de Satanas.mp3</a></li>
+        <li><a 	20.6 MB	11/04/15 06:15:18
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC33.mp3"><B>GC33 - e o Homem Imortal.mp3</a></li>
+        <li><a 	16.5 MB	11/04/15 04:46:51
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC34.mp3"><B>GC34 - Oferece o Espiritismo Alguma Esperanca.mp3</a></li>
+        <li><a 	16.4 MB	11/04/15 04:46:54
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC35.mp3"><B>GC35 - Ameaca a Consciencia.mp3</a></li>
+        <li><a 	16.8 MB	11/04/15 04:47:08
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC36.mp3"><B>GC36 - O Maior Perigo Para o Lar e a Vida.mp3</a></li>
+        <li><a 	16.6 MB	11/04/15 04:47:01
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC37.mp3"><B>GC37 - Nossa unica Salvaguarda.mp3</a></li>
+        <li><a 	15.3 MB	11/04/15 04:45:38
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC38.mp3"><B>GC38 - O ultimo Convite Divino.mp3</a></li>
+        <li><a 	15.3 MB	11/04/15 04:45:31
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC39.mp3"><B>GC39 - Aproxima-se o Tempo de Angustia.mp3</a></li>
+        <li><a 	37.0 MB	11/04/15 04:55:11
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC40.mp3"><B>GC40 - O Livramento dos Justos.mp3</a></li>
+        <li><a 	30.2 MB	11/04/15 06:37:44
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC41.mp3"><B>GC41 - Sera Desolada a Terra.mp3</a></li>
+        <li><a 	14.5 MB	11/04/15 06:34:10
+href="../config/MENU ONLINE/espiritodeprofecia/O Grande Conflito/GC42.mp3"><B>GC42 - O Final e Glorioso Triunfo.mp3</a></li>
+
+    </ul>
+  
+</body>
+
+
+</html>
