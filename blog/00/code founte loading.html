@@ -1,0 +1,105 @@
+	<link rel="shortcut icon" href="../img/md5.png" type="image/x-icon">
+ <!-- end outer-wrapper -->
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+<script type='text/javascript'>
+//<![CDATA[
+resizeThumb("main",250);
+labelnyacx();
+(function($) {
+var loadingGif = 'img/loading.gif';
+var olderPostsLink = '';
+var loadMoreDiv = null;
+var postContainerSelector = 'div.blog-posts';
+var loading = false;
+var win = $(window);
+var doc = $(document);
+// Took from jQuery to avoid permission denied error in IE.
+var rscript = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+
+function loadDisqusScript(domain) {
+  $.getScript('http://' + domain + '.disqus.com/blogger_index.js');
+}
+
+function loadMore() {
+  if (loading) {
+    return;
+  }
+  loading = true;
+
+  if (!olderPostsLink) {
+    loadMoreDiv.hide();
+    return;
+  }
+
+  loadMoreDiv.find('a').hide();
+  loadMoreDiv.find('img').show();
+  $.ajax(olderPostsLink, {
+    'dataType': 'html'
+  }).done(function(html) {
+    var newDom = $('<div></div>').append(html.replace(rscript, ''));
+    var newLink = newDom.find('a.blog-pager-older-link');
+    if (newLink) {
+      olderPostsLink = newLink.attr('href');
+    } else {
+      olderPostsLink = '';
+      loadMoreDiv.hide();
+    }
+
+    var newPosts = newDom.find(postContainerSelector).children('.date-outer');
+    $(postContainerSelector).append(newPosts);
+resizeThumb("main",250);
+    // Loaded more posts successfully.  Register this pageview with
+    // Google Analytics.
+    if (window._gaq) {
+      window._gaq.push(['_trackPageview', olderPostsLink]);
+    }
+    // Render +1 buttons.
+    if (window.gapi && window.gapi.plusone && window.gapi.plusone.go) {
+      window.gapi.plusone.go();
+    }
+    // Render Disqus comments.
+    if (window.disqus_shortname) {
+      loadDisqusScript(window.disqus_shortname);
+    }
+    // Render Facebook buttons.
+    if (window.FB && window.FB.XFBML && window.FB.XFBML.parse) {
+      window.FB.XFBML.parse();
+    }
+
+    loadMoreDiv.find('img').hide();
+    loadMoreDiv.find('a').show();
+
+    loading = false;
+  });
+}
+
+
+function init() {
+  if (_WidgetManager._GetAllData().blog.pageType == 'item') {
+    return;
+  }
+
+  olderPostsLink = $('a.blog-pager-older-link').attr('href');
+  if (!olderPostsLink) {
+    return;
+  }
+
+  var link = $('<a class="loadpost" href="javascript:;">Load more posts</a>');
+  link.click(loadMore);
+  var img = $('<img src="' + loadingGif + '" style="display: none;">');
+
+  loadMoreDiv = $('<div style="text-align: center; font-size: 140%;"></div>');
+  loadMoreDiv.append(link);
+  loadMoreDiv.append(img);
+  loadMoreDiv.insertBefore($('#blog-pager'));
+  $('#blog-pager').hide();
+}
+
+$(document).ready(init);
+
+})(jQuery);
+//]]>
+</script>
+</b:if></b:if>
+
